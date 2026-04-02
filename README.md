@@ -4,7 +4,7 @@ A collection of Python scripts demonstrating various Google Cloud services, incl
 
 ## Scripts Overview
 
-### `flash-lite.py`
+### `flash-lite-test.py`
 This script uses the `google-genai` library to interact with the `gemini-3.1-flash-lite-preview` model. It is configured to:
 - Generate summaries based on a user's prompt (e.g., "summarize the events from yesterday").
 - Utilize **Google Search** as a tool for enhanced information retrieval.
@@ -16,6 +16,12 @@ This script demonstrates Named Entity Recognition (NER) using the `google-cloud-
 - Analyzes text content for entities such as persons, locations, and organizations.
 - Outputs representative names, entity types, salience scores, and metadata (like Wikipedia URLs).
 - Detects mentions of entities within the text.
+
+### `long_running_agent/agent.py`
+This module demonstrates an advanced Google ADK multi-agent architecture capable of executing and tracking long-running asynchronous background tasks without blocking the main conversational flow.
+- A `starter_agent` dispatches non-blocking background threads (e.g. generating financial reports) and leaves state tokens on the file system.
+- A `checker_agent` synchronously retrieves and passes the report output cleanly back to the LLM.
+- The `root_agent` orchestrates user queries seamlessly between the two sub-agents, handling asynchronous check-ins dynamically within the natural chat interaction.
 
 ## Prerequisites
 
@@ -46,6 +52,16 @@ uv run flash-lite.py
 To execute the NER analysis:
 ```bash
 uv run ner.py
+```
+
+### Run Long-Running Agent
+To experience the non-blocking asynchronous agent workflow, run the ADK web interface:
+```bash
+uv run adk web long_running_agent
+```
+Or interact with the orchestrator agent directly via command line:
+```bash
+uv run adk run long_running_agent
 ```
 
 ## Dependencies
