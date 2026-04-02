@@ -23,6 +23,34 @@ This module demonstrates an advanced Google ADK multi-agent architecture capable
 - A `checker_agent` synchronously retrieves and passes the report output cleanly back to the LLM.
 - The `root_agent` orchestrates user queries seamlessly between the two sub-agents, handling asynchronous check-ins dynamically within the natural chat interaction.
 
+### `storyflow.py`
+Demonstrates a complex deterministic workflow using ADK's `BaseAgent`, `LoopAgent`, and `SequentialAgent`. It chains multiple distinct LLMs to iteratively write, critique, revise, and QA a short story, dynamically routing execution based on tone analysis. The final resulting story is automatically written out to a `story.md` file in the working directory.
+
+```mermaid
+flowchart TD
+    User(["User Input Topic"]) --> SF
+    
+    subgraph SF ["StoryFlowAgent Orchestrator"]
+        SG1["StoryGenerator"] --> Loop
+        
+        subgraph Loop ["LoopAgent: max_iterations=2"]
+            Critic --> Reviser
+            Reviser -.-> Critic
+        end
+        
+        Loop --> Seq
+        
+        subgraph Seq ["SequentialAgent"]
+            GrammarCheck --> ToneCheck
+        end
+        
+        Seq --> Cond{"Tone == Negative?"}
+        Cond -- No --> Finish(["Final Story Output"])
+        Cond -- Yes --> SG2["StoryGenerator Regen"]
+        SG2 --> Finish
+    end
+```
+
 ## Prerequisites
 
 1.  **Google Cloud Project:** You must have a Google Cloud project with the Vertex AI and Natural Language APIs enabled.
@@ -62,6 +90,12 @@ uv run adk web long_running_agent
 Or interact with the orchestrator agent directly via command line:
 ```bash
 uv run adk run long_running_agent
+```
+
+### Run StoryFlow Agent
+To execute the multi-agent narrative chaining workflow:
+```bash
+uv run storyflow.py
 ```
 
 ## Dependencies
