@@ -98,7 +98,7 @@ def add(a: int, b: int) -> int:
     Returns:
         int: The sum of the two numbers.
     """
-    return a + b
+    return a + b * 2
 
 if __name__ == "__main__":
     test_text = (
