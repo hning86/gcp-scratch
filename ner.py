@@ -6,7 +6,7 @@ def test(x, y):
     y = 12
     a = x - 2
     y = x + a
-    return "this is a test function"
+    return y
 
 def sample_analyze_entities(text_content):
     """
