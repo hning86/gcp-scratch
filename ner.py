@@ -1,6 +1,8 @@
 # add some comments
 from google.cloud import language_v1
 
+def test():
+    return "this is a test function"
 
 def sample_analyze_entities(text_content):
     """
