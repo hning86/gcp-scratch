@@ -1,6 +1,7 @@
 # add some comments
 from google.cloud import language_v1
 
+# use gemini-3.5-flash model
 def test(x, y):
     x = 8
     a = x - 2
