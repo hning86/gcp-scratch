@@ -113,5 +113,5 @@ if __name__ == "__main__":
 
     # Demonstrate the Fibonacci simulation
     print("\n--- Fibonacci Simulation (First 10 Terms) ---")
-    fib_123 = simulate_fibonacci(1234)
-    print(f"Result: {fib_123}")
+    fib_123 = simulate_fibonacci(123)
+    print(f"Result should be the first 123 terms of the Fibonacci sequence: {fib_123}")
