@@ -2,7 +2,7 @@
 from google.cloud import language_v1
 
 # use gemini-3.5-flash model
-def non_functional_test(x, y):
+def really_non_functional_test(x, y):
     x = 8
     a = x - 2
     y = x + a
