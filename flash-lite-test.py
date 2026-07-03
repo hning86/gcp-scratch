@@ -3,7 +3,7 @@ from google.genai import types
 import base64
 import os
 
-def test_add(a, b):
+def calculate_sum_of_squares(a, b):
   return a + b*b + a*a
 
 def generate():
