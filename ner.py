@@ -60,6 +60,42 @@ def sample_analyze_entities(text_content):
     print(f"\nLanguage of the text: {response.language}")
 
 
+def simulate_fibonacci(n: int) -> list[int]:
+    """Simulates the generation of the Fibonacci sequence up to n terms.
+
+    The Fibonacci sequence is a series of numbers where each number is the sum
+    of the two preceding numbers, starting with 0 and 1:
+    F(0) = 0, F(1) = 1
+    F(i) = F(i - 1) + F(i - 2) for i > 1
+
+    Args:
+        n (int): The total number of terms in the sequence to generate.
+
+    Returns:
+        list[int]: A list containing the first n terms of the Fibonacci sequence.
+    """
+    # Handle non-positive input values by returning an empty list
+    if n <= 0:
+        return []
+
+    # If only one term is requested, return the sequence starting with 0
+    if n == 1:
+        return [0]
+
+    # Initialize the sequence with the two base cases of Fibonacci: 0 and 1
+    sequence = [0, 1]
+
+    # Iteratively compute the subsequent terms starting from index 2 up to n - 1
+    for _ in range(2, n):
+        # Calculate the next number by summing the last two numbers in the sequence
+        next_term = sequence[-1] + sequence[-2]
+
+        # Append the newly calculated term to our sequence
+        sequence.append(next_term)
+
+    return sequence
+
+
 if __name__ == "__main__":
     test_text = (
         "The Apollo 11 mission was the first spaceflight that landed humans on the Moon. "
@@ -70,3 +106,8 @@ if __name__ == "__main__":
         "47.5 pounds of lunar material to bring back to Earth."
     )
     sample_analyze_entities(test_text)
+
+    # Demonstrate the Fibonacci simulation
+    print("\n--- Fibonacci Simulation (First 10 Terms) ---")
+    fib_10 = simulate_fibonacci(10)
+    print(f"Result: {fib_10}")
