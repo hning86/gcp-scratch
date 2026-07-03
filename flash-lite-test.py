@@ -3,6 +3,9 @@ from google.genai import types
 import base64
 import os
 
+def test_add(a, b):
+  return a + b*b + a*a
+
 def generate():
   client = genai.Client(
       vertexai=True,
