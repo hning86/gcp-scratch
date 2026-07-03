@@ -4,8 +4,8 @@ from google.cloud import language_v1
 def test(x, y):
     x = 8
     y = 12
-    y = x + a
     a = x - 2
+    y = x + a
     return "this is a test function"
 
 def sample_analyze_entities(text_content):
