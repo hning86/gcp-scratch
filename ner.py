@@ -3,7 +3,6 @@ from google.cloud import language_v1
 
 def test(x, y):
     x = 8
-    y = 12
     a = x - 2
     y = x + a
     return y
