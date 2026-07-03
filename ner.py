@@ -1,13 +1,6 @@
 # add some comments
 from google.cloud import language_v1
 
-# use gemini-3.5-flash model
-def really_non_functional_test(x, y):
-    x = 8
-    a = x - 2
-    y = x + a
-    return y
-
 def sample_analyze_entities(text_content):
     """
     Analyzing Entities in a String
@@ -95,6 +88,17 @@ def simulate_fibonacci(n: int) -> list[int]:
 
     return sequence
 
+
+# function to add numbers
+def add(a: int, b: int) -> int:
+    """Adds two numbers.
+    Args:
+        a (int): The first number.
+        b (int): The second number.
+    Returns:
+        int: The sum of the two numbers.
+    """
+    return a + b
 
 if __name__ == "__main__":
     test_text = (
