@@ -169,7 +169,7 @@ if __name__ == "__main__":
 
     # Demonstrate the Linked List Bubble Sort
     print("\n--- Linked List Bubble Sort ---")
-    unsorted_list = ListNode(64, ListNode(34, ListNode(25, ListNode(12, ListNode(22, ListNode(11, ListNode(90)))))))
+    unsorted_list = ListNode(64, ListNode(34, ListNode(25, ListNode(12, ListNode(22, ListNode(11, ListNode(910)))))))
     print(f"Unsorted Linked List: {unsorted_list}")
     sorted_list = bubble_sort_linked_list(unsorted_list)
     print(f"Sorted Linked List:   {sorted_list}")
