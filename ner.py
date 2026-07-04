@@ -2,8 +2,8 @@
 from typing import Any, Optional
 from google.cloud import language_v1
 
-
-def sample_analyze_entities(text_content):
+# this is a sample function.
+def sample_analyze_entities(text_content, iterations):
     """
     Analyzing Entities in a String
 
