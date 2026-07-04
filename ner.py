@@ -163,7 +163,7 @@ if __name__ == "__main__":
     sample_analyze_entities(test_text)
 
     # Demonstrate the Fibonacci simulation
-    print("\n--- Fibonacci Simulation (First 10 Terms) ---")
+    print("\n--- Fibonacci Simulation (First 20 Terms) ---")
     fib_123 = simulate_fibonacci(123)
     print(f"Result should be the first 123 terms of the Fibonacci sequence: {fib_123}")
 
