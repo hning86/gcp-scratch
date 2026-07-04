@@ -1,5 +1,7 @@
 # add some comments
+from typing import Any, Optional
 from google.cloud import language_v1
+
 
 def sample_analyze_entities(text_content):
     """
@@ -100,6 +102,55 @@ def add(a: int, b: int) -> int:
     """
     return a + b * 2
 
+
+class ListNode:
+    """A node in a singly linked list."""
+
+    def __init__(self, val: Any = 0, next_node: Optional["ListNode"] = None):
+        self.val = val
+        self.next = next_node
+
+    def __repr__(self) -> str:
+        vals = []
+        curr = self
+        while curr:
+            vals.append(str(curr.val))
+            curr = curr.next
+        return " -> ".join(vals)
+
+
+def bubble_sort_linked_list(head: Optional[ListNode]) -> Optional[ListNode]:
+    """Sorts a singly linked list in ascending order using the bubble sort algorithm.
+
+    Args:
+        head (Optional[ListNode]): The head node of the singly linked list.
+
+    Returns:
+        Optional[ListNode]: The head node of the sorted linked list.
+    """
+    if not head or not head.next:
+        return head
+
+    swapped = True
+    end = None  # Tracks the sorted portion at the end of the list
+
+    while swapped:
+        swapped = False
+        curr = head
+
+        while curr and curr.next != end:
+            if curr.val > curr.next.val:
+                # Swap values of adjacent nodes
+                curr.val, curr.next.val = curr.next.val, curr.val
+                swapped = True
+            curr = curr.next
+
+        # The last element compared is now in its sorted position
+        end = curr
+
+    return head
+
+
 if __name__ == "__main__":
     test_text = (
         "The Apollo 11 mission was the first spaceflight that landed humans on the Moon. "
@@ -115,3 +166,10 @@ if __name__ == "__main__":
     print("\n--- Fibonacci Simulation (First 10 Terms) ---")
     fib_123 = simulate_fibonacci(123)
     print(f"Result should be the first 123 terms of the Fibonacci sequence: {fib_123}")
+
+    # Demonstrate the Linked List Bubble Sort
+    print("\n--- Linked List Bubble Sort ---")
+    unsorted_list = ListNode(64, ListNode(34, ListNode(25, ListNode(12, ListNode(22, ListNode(11, ListNode(910)))))))
+    print(f"Unsorted Linked List: {unsorted_list}")
+    sorted_list = bubble_sort_linked_list(unsorted_list)
+    print(f"Sorted Linked List:   {sorted_list}")
