@@ -172,4 +172,4 @@ if __name__ == "__main__":
     unsorted_list = ListNode(64, ListNode(34, ListNode(25, ListNode(12, ListNode(22, ListNode(11, ListNode(910)))))))
     print(f"Unsorted Linked List: {unsorted_list}")
     sorted_list = bubble_sort_linked_list(unsorted_list)
-    print(f"Here is the sorted Linked List:   {sorted_list}")
+    print(f"Please here is the sorted Linked List:   {sorted_list}")
