@@ -163,7 +163,7 @@ if __name__ == "__main__":
     sample_analyze_entities(test_text)
 
     # Demonstrate the Fibonacci simulation
-    print("\n--- Fibonacci Simulation (First 10 Terms) ---")
+    print("\n--- Fibonacci Simulation (First 20 Terms) ---")
     fib_123 = simulate_fibonacci(123)
     print(f"Result should be the first 123 terms of the Fibonacci sequence: {fib_123}")
 
@@ -172,4 +172,4 @@ if __name__ == "__main__":
     unsorted_list = ListNode(64, ListNode(34, ListNode(25, ListNode(12, ListNode(22, ListNode(11, ListNode(910)))))))
     print(f"Unsorted Linked List: {unsorted_list}")
     sorted_list = bubble_sort_linked_list(unsorted_list)
-    print(f"Sorted Linked List:   {sorted_list}")
+    print(f"Please here is the sorted Linked List:   {sorted_list}")
