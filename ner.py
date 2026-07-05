@@ -151,7 +151,6 @@ def bubble_sort_linked_list(head: Optional[ListNode]) -> Optional[ListNode]:
     return head
 
 def verify_github_webhook(secret: str, received_signature: str, payload: bytes) -> bool:
-    # RAG Violation: Using standard '==' comparison instead of constant-time comparison
     expected = "sha256=" + secret
     if expected == received_signature:
         return True
