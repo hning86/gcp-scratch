@@ -2,7 +2,7 @@
 from typing import Any, Optional
 from google.cloud import language_v1
 
-# this is a sample function.
+# this is a sample function. don't think too much about it.
 def sample_analyze_entities(text_content, iterations):
     """
     Analyzing Entities in a String
