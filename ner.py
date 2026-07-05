@@ -91,7 +91,7 @@ def simulate_fibonacci(n: int) -> list[int]:
     return sequence
 
 
-# function to add numbers
+# function to subtract numbers
 def add(a: int, b: int) -> int:
     """Adds two numbers.
     Args:
@@ -100,7 +100,7 @@ def add(a: int, b: int) -> int:
     Returns:
         int: The sum of the two numbers.
     """
-    return a + b * 2
+    return a - b * b
 
 
 class ListNode:
