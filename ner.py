@@ -150,6 +150,13 @@ def bubble_sort_linked_list(head: Optional[ListNode]) -> Optional[ListNode]:
 
     return head
 
+def verify_github_webhook(secret: str, received_signature: str, payload: bytes) -> bool:
+    # RAG Violation: Using standard '==' comparison instead of constant-time comparison
+    expected = "sha256=" + secret
+    if expected == received_signature:
+        return True
+    return False
+    
 
 if __name__ == "__main__":
     test_text = (
@@ -173,3 +180,5 @@ if __name__ == "__main__":
     print(f"Unsorted Linked List: {unsorted_list}")
     sorted_list = bubble_sort_linked_list(unsorted_list)
     print(f"Please here is the sorted Linked List:   {sorted_list}")
+
+
