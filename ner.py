@@ -150,6 +150,9 @@ def bubble_sort_linked_list(head: Optional[ListNode]) -> Optional[ListNode]:
 
     return head
 
+def bad_function():
+    secret = "12345"
+    return secret
 
 if __name__ == "__main__":
     test_text = (
